@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemantauan Harga Bapokting</title>
+  <style>
+    /* Reset dasar */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #eef3f8);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 5px rgba(76,175,80,0.3);
+    }
+
+    button {
+      margin-top: 20px;
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      border: none;
+    }
+
+    button:hover {
+      background: #43a047;
+    }
+
+    /* Responsif untuk HP */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      input, button {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Pemantauan Harga Bapokting</h2>
+
+    <!-- Searchable Dropdown -->
+    <label for="komoditas">Komoditas</label>
+    <input list="daftarKomoditas" id="komoditas" placeholder="Cari atau pilih komoditas...">
+    <datalist id="daftarKomoditas">
+      <option>Beras Premium (Beras cap Jeruk & Beras Cap Arum Sari)</option>
+      <option>Beras Bulog</option>
+      <option>Beras Cihirang</option>
+      <option>Minyak Goreng Kemasan Sederhana</option>
+      <option>Minyak Goreng Kemasan Premium</option>
+      <option>Minyak Goreng Curah</option>
+      <option>Cabe Merah Besar</option>
+      <option>Cabe Merah Keriting</option>
+      <option>Cabe Rawit Merah</option>
+      <option>Cabe Tiung</option>
+      <option>Tomat</option>
+      <option>Wortel</option>
+      <option>Bawang Merah</option>
+      <option>Bawang Putih</option>
+      <option>Bawang Bombai</option>
+      <option>Kacang Kedelai</option>
+      <option>Kacang Tanah</option>
+      <option>Kacang Hijau</option>
+      <option>Kangkung</option>
+      <option>Buncis</option>
+      <option>Kentang</option>
+      <option>Petai (Ikat)</option>
+      <option>Petai (Lonjor)</option>
+      <option>Tempe Ukuran Panjang</option>
+      <option>Tempe Ukuran Kecil</option>
+      <option>Ayam Ras</option>
+      <option>Ayam Kampung</option>
+      <option>Ikan Patin</option>
+      <option>Ikan Patin Sungai</option>
+      <option>Ikan Kembung</option>
+      <option>Ikan Tongkol</option>
+      <option>Ikan Tuna</option>
+      <option>Ikan Bandeng</option>
+      <option>Ikan Cakalang</option>
+      <option>Ikan Baung</option>
+      <option>Ikan Asin</option>
+      <option>Udang Galah</option>
+      <option>Cumi</option>
+      <option>Ikan Nila</option>
+      <option>Ikan Gabus</option>
+      <option>Daging Sapi</option>
+      <option>Daging Kerbau (Bulog)</option>
+      <option>Telur Ras (Kg)</option>
+      <option>Telur Ras (Butir)</option>
+      <option>Telur Bebek</option>
+      <option>Telur Puyuh</option>
+      <option>Telur Ayam Kampung</option>
+      <option>Gula</option>
+      <option>Susu</option>
+      <option>Buah Pisang</option>
+      <option>Buah Anggur Hitam</option>
+      <option>Buah Anggur Merah</option>
+      <option>Buah Mangga Arumanis</option>
+      <option>Buah Mangga Pokat</option>
+      <option>Buah Jeruk Biasa</option>
+      <option>Buah Jeruk Taiwan</option>
+      <option>Buah Nenas</option>
+      <option>Buah Naga</option>
+      <option>Buah Strawberi</option>
+      <option>Buah Kelapa</option>
+      <option>Air Galon Merk Aqua</option>
+      <option>Air Galon Merk Prof</option>
+      <option>Air Galon Merk Cleo</option>
+      <option>Tepung Terigu</option>
+      <option>Mie Instan</option>
+      <option>Garam Beryodium Halus</option>
+      <option>Gas Elpiji 3 Kg</option>
+      <option>Gas Elpiji 12 Kg</option>
+    </datalist>
+
+    <!-- Input penjual -->
+    <label for="penjual">Penjual</label>
+    <input type="text" id="penjual" placeholder="Nama penjual">
+
+    <!-- Input harga -->
+    <label for="harga">Harga</label>
+    <input type="text" id="harga" placeholder="Contoh: 60000/Kg">
+
+    <button onclick="submitForm()">Kirim</button>
+  </div>
+
+  <script>
+    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScx7pvAcS5DA7_-oHTsLQkWMuuGpRl-kRRyibQTg4bO2wqirQ/formResponse";
+    
+    function submitForm() {
+      const komoditas = document.getElementById("komoditas").value;
+      const penjual = document.getElementById("penjual").value;
+      const harga = document.getElementById("harga").value;
+      
+      if (!komoditas || !penjual || !harga) {
+        alert("⚠️ Semua field harus diisi!");
+        return;
+      }
+      
+      const data = new FormData();
+      data.append("entry.1405739322", komoditas); // Entry ID Komoditas
+      data.append("entry.95779903", penjual);     // Entry ID Penjual
+      data.append("entry.1394441386", harga);     // Entry ID Harga
+      
+      fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+      }).then(() => {
+        alert("✅ Data berhasil dikirim!");
+        document.getElementById("komoditas").value = "";
+        document.getElementById("penjual").value = "";
+        document.getElementById("harga").value = "";
+      });
+    }
+  </script>
+</body>
+</html>
